@@ -1,0 +1,16 @@
+#titulo{
+    color: #060909;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+}
+#body-inicio{
+    background: url("Imagenes/fondo_inicio.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+#actvidades1{
+    color: #060909;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+}
