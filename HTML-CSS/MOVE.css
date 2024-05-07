@@ -1,7 +1,18 @@
 #titulo{
-    color: #060909;
+    color: #ffffff;
     font-family: "Bebas Neue", sans-serif;
+    font-size: 70px;
     text-align: center;
+    background-color: #060909;
+}
+div.datos{
+    text-align: left;
+    color: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 13px;
+    background-color: #060909;
+    border-radius: 10px;
+    width: 250px;
 }
 #body-inicio{
     background: url("Imagenes/fondo_inicio.jpg");
@@ -9,8 +20,57 @@
     background-size: cover;
     text-align: center;
 }
-#actvidades1{
-    color: #060909;
+div.inicio{
     font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+a:link, a:visited{
+    color: honeydew;
+}
+a:hover{
+    font-size: 1.5em;
+}
+a:active{
+    font-weight: bold;
+}
+div.imc-inicio{
+    border: 2px solid #0aff6f;
+    padding: 15px;
+    margin: 20px 20px 40px;
+    border-radius: 50px;
+    background: #1aa659;
+    box-shadow: -2px -4px #0aff6f;
+    width: 500px;
+    position: relative;
+    left: 900px;
+}
+div.planes-inicio{
+    border: 2px solid #0aff6f;
+    padding: 15px;
+    margin: 20px 20px 40px;
+    border-radius: 50px;
+    background: #1aa659;
+    box-shadow: -2px -4px #0aff6f;
+    width: 500px;
+    position: relative;
+    left: 500px;
+}
+div.actividades-inicio{
+    border: 2px solid #0aff6f;
+    padding: 15px;
+    margin: 20px 20px 40px;
+    border-radius: 50px;
+    background: #1aa659;
+    box-shadow: -2px -4px #0aff6f;
+    width: 500px;
+    position: relative;
+    left: 200px;
+}
+
+#body-actividades{
+    background: url("imagenes/fondo_actividades.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
 }
