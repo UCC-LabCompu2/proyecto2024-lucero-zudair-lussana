@@ -88,3 +88,68 @@ div.act{
     width: auto;
 }
 
+#body-planes{
+    background: url("imagenes/fondo_planes.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+a:link, a:visited{
+    color: white;
+}
+a:hover{
+    font-size: 1.5em;
+}
+a:active{
+    font-weight: bold;
+}
+div.planes{
+    text-align: center;
+    border: 2px solid #9ea4bd;
+    padding: 10px;
+    margin: 10px 10px 30px;
+    background: #5a7a7e;
+}
+div.hipertrofia{
+    text-align: center;
+    border: 2px solid #9ea4bd;
+    padding: 15px;
+    margin: 20px 20px 40px;
+    border-radius: 50px;
+    background: #5a7a7e;
+    box-shadow: -2px -4px #9ea4bd;
+    width: 500px;
+}
+div.circuitos{
+    text-align: center;
+    border: 2px solid #9ea4bd;
+    padding: 15px;
+    margin: 20px 20px 40px;
+    border-radius: 50px;
+    background: #5a7a7e;
+    box-shadow: -2px -4px #9ea4bd;
+    width: 500px;
+}
+div.toni{
+    text-align: center;
+    border: 2px solid #9ea4bd;
+    padding: 15px;
+    margin: 20px 20px 40px;
+    border-radius: 50px;
+    background: #5a7a7e;
+    box-shadow: -2px -4px #9ea4bd;
+    width: 500px;
+}
+div.coach{
+    text-align: center;
+    border: 2px solid #9ea4bd;
+    padding: 15px;
+    margin: 20px 20px 40px;
+    border-radius: 50px;
+    background: #5a7a7e;
+    box-shadow: -2px -4px #9ea4bd;
+    width: 500px;
+}
