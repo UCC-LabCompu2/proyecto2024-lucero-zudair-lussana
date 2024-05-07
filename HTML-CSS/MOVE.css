@@ -164,15 +164,83 @@ div.coach{
     font-size: 20px;
 }
 div.titulocoach{
-    background-color: rgb(37, 35, 35);
+    background-color: rgba(37, 35, 35, 0.89);
     border: 2px solid #060909;
     padding: 15px;
     margin: 10px;
 }
 div.coach1{
-    background-color: rgba(37, 35, 35, 0.73);
+    background-color: rgba(37, 35, 35, 0.83);
     border: 2px solid #060909;
     padding: 15px;
     margin: 10px;
     width: auto;
+}
+
+#circuitos{
+    background: url("imagenes/fondo_circuitos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+div.circ{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+}
+div.circu{
+    background-color: rgba(37, 35, 35, 0.83);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+    width: auto;
+}
+
+#hipertro{
+    background: url("imagenes/fondo_hipertrofia.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+div.Hipertrofia{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+}
+div.hiper{
+    background-color: rgba(37, 35, 35, 0.83);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+    width: auto;
+}
+
+#tonificar{
+    background: url("imagenes/fondo_tonificar.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+div.tonifi{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+}
+div.tonif{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
 }
