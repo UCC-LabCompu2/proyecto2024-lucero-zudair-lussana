@@ -68,9 +68,23 @@ div.actividades-inicio{
     left: 200px;
 }
 
-#body-actividades{
+#body-act{
     background: url("imagenes/fondo_actividades.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
 }
+div.act\.1{
+    background-color: rgba(37, 35, 35, 0.73);
+}
+div.act{
+    background-color: rgba(37, 35, 35, 0.73);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+    width: auto;
+}
+
