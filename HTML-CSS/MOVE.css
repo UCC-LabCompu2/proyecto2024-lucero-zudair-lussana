@@ -244,3 +244,37 @@ div.tonif{
     padding: 15px;
     margin: 10px;
 }
+
+#body-imc{
+    background: url("Imagenes/fondo_imc.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+div.imc{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+}
+div.calculIMC{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+}
+div.recomendacion{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding-bottom: 250px;
+    margin: 10px;
+}
+div.quees{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+}

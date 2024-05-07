@@ -2,10 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MOVE\IMC</title>
+    <title>IMC</title>
+    <link href="Imagenes/logo-shortcut.jpg" rel="shortcut icon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="MOVE.css" type="text/css">
+    <style>
+        article{
+            column-count: 2;
+            column-gap: 20px;
+            margin: 10px 10px;
+        }
+    </style>
 </head>
 <body id="body-imc">
+<div class="imc">
+<h2>CALCULAR IMC: </h2>
+</div>
+<div class="calculIMC">
+    <p>
+        <label for="Peso">Peso (en KG): </label>
+        <input type="number" name="Peso" id="Peso" size="3" placeholder="Ingrese su peso: " maxlength="3" min="0">
+    </p>
+    <p>
+        <label for="Altura">Altura (en CM):</label>
+        <input type="number" name="Altura" id="Altura" size="3" placeholder="Ingrese su altura: " maxlength="13">
+    </p>
+    <p>
+        <h3>Indice de masa corporal: (resultado)</h3>
+    </p>
+</div>
+<article>
+<div class="recomendacion">
+    <h4>NUESTRA RECOMENDACION: </h4>
 
+</div>
+<div class="quees">
+    <h4>QUE ES EL INDICE DE MASA MUSCULAR?</h4>
+    <p>
+        El índice de masa corporal (IMC) es el peso de una persona en kilogramos dividido por el cuadrado de la estatura en metros. El IMC es un método de evaluación fácil y económico para la categoría de peso: bajo peso, peso saludable, sobrepeso, y obesidad.
+        El IMC no mide la grasa corporal directamente, pero el IMC se correlaciona moderadamente con medidas más directas de la grasa corporal. Además, el IMC parece estar tan fuertemente correlacionado con diversos resultados metabólicos y de enfermedades como lo están estas medidas más directas de la grasa corporal.
+    </p>
+</div>
+</article>
 </body>
 </html>
