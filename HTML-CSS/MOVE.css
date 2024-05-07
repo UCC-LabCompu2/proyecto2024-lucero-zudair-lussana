@@ -108,49 +108,45 @@ a:active{
 }
 div.planes{
     text-align: center;
-    border: 2px solid #9ea4bd;
+    border: 2px solid;
     padding: 10px;
     margin: 10px 10px 30px;
-    background: #5a7a7e;
+    background-color: rgba(37, 35, 35, 0.89);
 }
 div.hipertrofia{
     text-align: center;
-    border: 2px solid #9ea4bd;
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
     padding: 15px;
     margin: 20px 20px 40px;
     border-radius: 50px;
-    background: #5a7a7e;
-    box-shadow: -2px -4px #9ea4bd;
     width: 500px;
 }
 div.circuitos{
     text-align: center;
-    border: 2px solid #9ea4bd;
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
     padding: 15px;
     margin: 20px 20px 40px;
     border-radius: 50px;
-    background: #5a7a7e;
-    box-shadow: -2px -4px #9ea4bd;
     width: 500px;
 }
 div.toni{
     text-align: center;
-    border: 2px solid #9ea4bd;
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
     padding: 15px;
     margin: 20px 20px 40px;
     border-radius: 50px;
-    background: #5a7a7e;
-    box-shadow: -2px -4px #9ea4bd;
     width: 500px;
 }
 div.coach{
     text-align: center;
-    border: 2px solid #9ea4bd;
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
     padding: 15px;
     margin: 20px 20px 40px;
     border-radius: 50px;
-    background: #5a7a7e;
-    box-shadow: -2px -4px #9ea4bd;
     width: 500px;
 }
 
