@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>COACH ONLINE</title>
+    <link href="Imagenes/logo-shortcut.jpg" rel="shortcut icon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="MOVE.css" type="text/css">
+    <style>
+        form {
+            display: block;
+            margin-top: 0em;
+        }
+    </style>
 </head>
-<body>
-$END$
+<body id="coach">
+<div class="titulocoach">
+<h1>COACH ONLINE</h1>
+<h3>Completa con tus datos y uno de nuestros profes te contactara para que empieces a trabajar en tus objetivos!</h3>
+</div>
+<div class="coach1">
+<form name="formularioIncripcion" id="formulario">
+    <p>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" size="40" placeholder="Ingrese Nombre: " maxlength="40">
+    </p>
+    <p>
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" id="apellido" size="40" placeholder="Ingrese Apellido: " maxlength="40">
+    </p>
+    <p>
+        Sexo: <br>
+        <input type="radio" name="genero" value="masculino" id="masculino"><label for="masculino">Masculino</label>
+        <input type="radio" name="genero" value="femenino" id="femenino"><label for="femenino">Femenino</label>
+        <input type="radio" name="genero" value="noRevelarlo" id="prefieronodecirlo"><label for="prefieronodecirlo">Prefiero no decirlo</label>
+    </p>
+    <p>
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" id="edad" size="40" placeholder="Ingrese su edad: " maxlength="3" min="0">
+    </p>
+    <p>
+        <label for="telefono">Telefono:</label>
+        <input type="number" name="telefono" id="telefono" size="40" placeholder="Ingrese su telefono: " maxlength="13">
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" size="40" placeholder="Ingrese Email: " maxlength="40">
+    </p>
+    <p>
+        Seleccione su objetivo:
+        <select name="tipoPlan" id="tipoPlan">
+            <option value="bajar">Bajar de peso</option>
+            <option value="subir">Aumentar masa muscular</option>
+            <option value="mantener">Mantenerme en forma</option>
+            <option value="otro">Otro</option>
+        </select>
+    </p>
+    <p>
+        <label for="otro">Si como objetivo selecciono "OTRO", complete con su objetivo: </label><br>
+        <textarea name="otro" id="otro" rows="5" cols="50"></textarea>
+    </p>
+    <p>
+        <button type="button">
+            ENVIAR
+        </button>
+    </p>
+</form>
+</div>
 </body>
 </html>
