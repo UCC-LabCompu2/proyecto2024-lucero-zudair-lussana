@@ -1,20 +1,20 @@
 # Proyecto2024-Lucero Zudair-Lussana
-Proyecto para laboratorio de comutacion 2. 
+Proyecto para laboratorio de computación 2. 
 ## Autores: 
-* **Lucero Zudaire** Maria Luza
+* **Lucero Zudaire** Maria Luz
 * **Lussana** Ana Paula
 
 ## Contenido/descripcion: 
-Repositorio para el proyecto para laboratorio de comutacion 2, vamos a realizar una pagina sobre un gimnasio.
+Repositorio para el proyecto para laboratorio de computación 2, vamos a realizar una página sobre un gimnasio.
 
 | Email | Autores |
 |-------|---------|
 |2306404@ucc.edu.ar|Ana Paula Lussana|
 |2318540@ucc.edu.ar|Maria Luz Lucero Zudaire|
 
-## Tecnologias usadas:
+## Tecnologías usadas:
 * WebStorm
 * Google fonts
 
 Link del proyecto: [Aula virtual del proyecto(https://github.com/UCC-LabCompu2/proyecto2024-lucero-zudair-lussana/tree/master)]
-
+Link de pages de Git: [Proyecto gimansio MOVE(https://ucc-labcompu2.github.io/proyecto2024-lucero-zudair-lussana/)]
