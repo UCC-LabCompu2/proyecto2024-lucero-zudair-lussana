@@ -8,15 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="MOVE.css" type="text/css">
-    <style>
-        form {
-            display: block;
-            margin-top: 0em;
-        }
-    </style>
 </head>
 <body id="coach">
-<div class="titulocoach">
+<nav>
+    <ul>
+        <li><a href="Index.html">INICIO</a></li>
+        <li><a href="PLANES.html">PLANES</a></li>
+        <li><a href="HIPERTROFIA.html">HIPERTROFIA</a></li>
+        <li><a href="CIRCUITOS.html">CIRCUITOS</a></li>
+        <li><a href="TONIFICAR.html">TONIFICAR</a></li>
+    </ul>
+</nav>
+<div class="coach1">
 <h1>COACH ONLINE</h1>
 <h3>Completa con tus datos y uno de nuestros profes te contactara para que empieces a trabajar en tus objetivos!</h3>
 </div>
@@ -41,20 +44,24 @@
         <input type="number" name="edad" id="edad" size="40" placeholder="Ingrese su edad: " maxlength="3" min="0">
     </p>
     <p>
-        <label for="telefono">Telefono:</label>
-        <input type="number" name="telefono" id="telefono" size="40" placeholder="Ingrese su telefono: " maxlength="13">
+        <label for="telefono">Teléfono:</label>
+        <input type="number" name="telefono" id="telefono" size="40" placeholder="Ingrese su teléfono: " maxlength="13">
     </p>
     <p>
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" size="40" placeholder="Ingrese Email: " maxlength="40">
     </p>
     <p>
-        Seleccione su objetivo:
+        <label for="tipoPlan">Selecciona tu objetivo:</label>
         <select name="tipoPlan" id="tipoPlan">
             <option value="bajar">Bajar de peso</option>
+            <label for="bajar" id="bajar"></label>
             <option value="subir">Aumentar masa muscular</option>
+            <label for="subir" id="subir"></label>
             <option value="mantener">Mantenerme en forma</option>
-            <option value="otro">Otro</option>
+            <label for="mantener" id="mantener"></label>
+            <option value="otros">Otro</option>
+            <label for="otros" id="otros"></label>
         </select>
     </p>
     <p>

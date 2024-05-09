@@ -35,37 +35,70 @@ a:active{
     font-weight: bold;
 }
 div.imc-inicio{
-    border: 2px solid #0aff6f;
+    border: 2px solid #060909;
     padding: 15px;
     margin: 20px 20px 40px;
     border-radius: 50px;
-    background: #1aa659;
-    box-shadow: -2px -4px #0aff6f;
+    background-color: rgba(37, 35, 35, 0.82);
+    box-shadow: -2px -4px #060909;
     width: 500px;
     position: relative;
     left: 900px;
 }
 div.planes-inicio{
-    border: 2px solid #0aff6f;
+    border: 2px solid #060909;
     padding: 15px;
     margin: 20px 20px 40px;
     border-radius: 50px;
-    background: #1aa659;
-    box-shadow: -2px -4px #0aff6f;
+    background-color: rgba(37, 35, 35, 0.82);
+    box-shadow: -2px -4px #060909;
     width: 500px;
     position: relative;
     left: 500px;
 }
 div.actividades-inicio{
-    border: 2px solid #0aff6f;
+    border: 2px solid #060909;
     padding: 15px;
     margin: 20px 20px 40px;
     border-radius: 50px;
-    background: #1aa659;
-    box-shadow: -2px -4px #0aff6f;
+    background-color: rgba(37, 35, 35, 0.82);
+    box-shadow: -2px -4px #060909;
     width: 500px;
     position: relative;
     left: 200px;
+}
+
+nav{
+    background-color: rgb(9, 8, 8);
+    color: #ffffff;
+    padding: 10px;
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav li{
+    display: inline-block;
+    margin: 10px;
+}
+nav a{
+    color: #fff;
+    text-decoration:none;
+}
+article{
+    column-count: 3;
+    column-gap: 20px;
+    margin: 10px 10px;
+}
+#articule1{
+    column-count: 2;
+    column-gap: 20px;
+    margin: 10px 10px;
+}
+form {
+    display: block;
+    margin-top: 0em;
 }
 
 #body-act{
@@ -113,7 +146,7 @@ div.planes{
     margin: 10px 10px 30px;
     background-color: rgba(37, 35, 35, 0.89);
 }
-div.hipertrofia{
+div.planes1{
     text-align: center;
     background-color: rgba(37, 35, 35, 0.89);
     border: 2px solid #060909;
@@ -122,32 +155,14 @@ div.hipertrofia{
     border-radius: 50px;
     width: 500px;
 }
-div.circuitos{
-    text-align: center;
+div.canvas{
+    position: absolute;
+    top: 250px;
+    left: 700px;
+    width: 50%;
+    height: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.87);
     background-color: rgba(37, 35, 35, 0.89);
-    border: 2px solid #060909;
-    padding: 15px;
-    margin: 20px 20px 40px;
-    border-radius: 50px;
-    width: 500px;
-}
-div.toni{
-    text-align: center;
-    background-color: rgba(37, 35, 35, 0.89);
-    border: 2px solid #060909;
-    padding: 15px;
-    margin: 20px 20px 40px;
-    border-radius: 50px;
-    width: 500px;
-}
-div.coach{
-    text-align: center;
-    background-color: rgba(37, 35, 35, 0.89);
-    border: 2px solid #060909;
-    padding: 15px;
-    margin: 20px 20px 40px;
-    border-radius: 50px;
-    width: 500px;
 }
 
 #coach{
@@ -159,18 +174,11 @@ div.coach{
     font-family: "PT Sans Narrow", sans-serif;
     font-size: 20px;
 }
-div.titulocoach{
+div.coach1{
     background-color: rgba(37, 35, 35, 0.89);
     border: 2px solid #060909;
     padding: 15px;
     margin: 10px;
-}
-div.coach1{
-    background-color: rgba(37, 35, 35, 0.83);
-    border: 2px solid #060909;
-    padding: 15px;
-    margin: 10px;
-    width: auto;
 }
 
 #circuitos{
@@ -188,13 +196,6 @@ div.circ{
     padding: 15px;
     margin: 10px;
 }
-div.circu{
-    background-color: rgba(37, 35, 35, 0.83);
-    border: 2px solid #060909;
-    padding: 15px;
-    margin: 10px;
-    width: auto;
-}
 
 #hipertro{
     background: url("imagenes/fondo_hipertrofia.jpg");
@@ -211,13 +212,6 @@ div.Hipertrofia{
     padding: 15px;
     margin: 10px;
 }
-div.hiper{
-    background-color: rgba(37, 35, 35, 0.83);
-    border: 2px solid #060909;
-    padding: 15px;
-    margin: 10px;
-    width: auto;
-}
 
 #tonificar{
     background: url("imagenes/fondo_tonificar.jpg");
@@ -229,12 +223,6 @@ div.hiper{
     font-size: 20px;
 }
 div.tonifi{
-    background-color: rgba(37, 35, 35, 0.89);
-    border: 2px solid #060909;
-    padding: 15px;
-    margin: 10px;
-}
-div.tonif{
     background-color: rgba(37, 35, 35, 0.89);
     border: 2px solid #060909;
     padding: 15px;
@@ -256,21 +244,13 @@ div.imc{
     padding: 15px;
     margin: 10px;
 }
-div.calculIMC{
-    background-color: rgba(37, 35, 35, 0.89);
-    border: 2px solid #060909;
-    padding: 15px;
-    margin: 10px;
-}
 div.recomendacion{
-    background-color: rgba(37, 35, 35, 0.89);
     border: 2px solid #060909;
     padding-bottom: 250px;
     margin: 10px;
 }
-div.quees{
-    background-color: rgba(37, 35, 35, 0.89);
-    border: 2px solid #060909;
-    padding: 15px;
-    margin: 10px;
+div.imagen{
+    text-align: right;
+    margin-top: 10px;
+    border-image-width: 50px;
 }
