@@ -1,0 +1,256 @@
+#titulo{
+    color: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 70px;
+    text-align: center;
+    background-color: #060909;
+}
+div.datos{
+    text-align: left;
+    color: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 13px;
+    background-color: #060909;
+    border-radius: 10px;
+    width: 250px;
+}
+#body-inicio{
+    background: url("Imagenes/fondo_inicio.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+div.inicio{
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+a:link, a:visited{
+    color: honeydew;
+}
+a:hover{
+    font-size: 1.5em;
+}
+a:active{
+    font-weight: bold;
+}
+div.imc-inicio{
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 20px 20px 40px;
+    border-radius: 50px;
+    background-color: rgba(37, 35, 35, 0.82);
+    box-shadow: -2px -4px #060909;
+    width: 500px;
+    position: relative;
+    left: 900px;
+}
+div.planes-inicio{
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 20px 20px 40px;
+    border-radius: 50px;
+    background-color: rgba(37, 35, 35, 0.82);
+    box-shadow: -2px -4px #060909;
+    width: 500px;
+    position: relative;
+    left: 500px;
+}
+div.actividades-inicio{
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 20px 20px 40px;
+    border-radius: 50px;
+    background-color: rgba(37, 35, 35, 0.82);
+    box-shadow: -2px -4px #060909;
+    width: 500px;
+    position: relative;
+    left: 200px;
+}
+
+nav{
+    background-color: rgb(9, 8, 8);
+    color: #ffffff;
+    padding: 10px;
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav li{
+    display: inline-block;
+    margin: 10px;
+}
+nav a{
+    color: #fff;
+    text-decoration:none;
+}
+article{
+    column-count: 3;
+    column-gap: 20px;
+    margin: 10px 10px;
+}
+#articule1{
+    column-count: 2;
+    column-gap: 20px;
+    margin: 10px 10px;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+#body-act{
+    background: url("imagenes/fondo_actividades.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+div.act\.1{
+    background-color: rgba(37, 35, 35, 0.73);
+}
+div.act{
+    background-color: rgba(37, 35, 35, 0.73);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+    width: auto;
+}
+
+#body-planes{
+    background: url("imagenes/fondo_planes.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+a:link, a:visited{
+    color: white;
+}
+a:hover{
+    font-size: 1.5em;
+}
+a:active{
+    font-weight: bold;
+}
+div.planes{
+    text-align: center;
+    border: 2px solid;
+    padding: 10px;
+    margin: 10px 10px 30px;
+    background-color: rgba(37, 35, 35, 0.89);
+}
+div.planes1{
+    text-align: center;
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 20px 20px 40px;
+    border-radius: 50px;
+    width: 500px;
+}
+div.canvas{
+    position: absolute;
+    top: 250px;
+    left: 700px;
+    width: 50%;
+    height: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.87);
+    background-color: rgba(37, 35, 35, 0.89);
+}
+
+#coach{
+    background: url("imagenes/fondo_coach.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+div.coach1{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+}
+
+#circuitos{
+    background: url("imagenes/fondo_circuitos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+div.circ{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+}
+
+#hipertro{
+    background: url("imagenes/fondo_hipertrofia.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+div.Hipertrofia{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+}
+
+#tonificar{
+    background: url("imagenes/fondo_tonificar.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+div.tonifi{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+}
+
+#body-imc{
+    background: url("Imagenes/fondo_imc.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+}
+div.imc{
+    background-color: rgba(37, 35, 35, 0.89);
+    border: 2px solid #060909;
+    padding: 15px;
+    margin: 10px;
+}
+div.recomendacion{
+    border: 2px solid #060909;
+    padding-bottom: 250px;
+    margin: 10px;
+}
+div.imagen{
+    text-align: right;
+    margin: 0px 50px;
+    border-image-width: 50px;
+}
