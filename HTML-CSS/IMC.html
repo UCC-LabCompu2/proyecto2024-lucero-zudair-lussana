@@ -32,13 +32,19 @@
         <input type="number" name="Altura" id="Altura" size="3" placeholder="Ingrese su altura: " maxlength="13">
     </p>
     <p>
-    <h3>Índice de masa corporal: (resultado)</h3>
+        <button onclick="calcularIMC()">Calcular IMC</button>
+    </p>
+    <p>
+    <h3>Índice de masa corporal: <span id="resultadoIMC"></span>
+    </h3>
+    <h3> Situacion: <span id="recomendacion"> </span>
+    </h3>
     </p>
 </div>
 <article id="articule1">
     <div class="imc">
         <div class="recomendacion">
-            <h4>NUESTRA RECOMENDACIÓN: </h4>
+            <h4>NUESTRA RECOMENDACIÓN: <span id="recoemndacion"> </span> </h4>
         </div>
     </div>
     <div class="imc">
@@ -57,5 +63,27 @@
     <img src="Imagenes/imc.imagen.jpg"
          alt="Imagen que describe con un grafico en que IMC te encontras, y de acuerdo a eso, te dice si te encontras en forma o no.">
 </div>
+
+
+<script>
+    function calcularIMC() {
+        var peso = parseFloat(document.getElementById('Peso').value);
+        var altura = parseFloat(document.getElementById('Altura').value) / 100; // convertir cm a metros
+        var imc = peso / (altura * altura);
+
+        document.getElementById('resultadoIMC').innerText = imc.toFixed(2);
+
+        if (imc < 18.5) {
+            recomendacion = 'Bajo peso';
+        } else if (imc >= 18.5 && imc < 24.9) {
+            recomendacion = 'Peso saludable';
+        } else if (imc >= 25 && imc < 29.9) {
+            recomendacion = 'Sobrepeso';
+        } else {
+            recomendacion = 'Obesidad';
+        }
+        document.getElementById('recomendacion').innerText = recomendacion;
+    }
+</script>
 </body>
 </html>
