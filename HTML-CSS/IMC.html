@@ -26,10 +26,12 @@
     <p>
         <label for="Peso">Peso (en KG): </label>
         <input type="number" name="Peso" id="Peso" size="3" placeholder="Ingrese su peso: " maxlength="3" min="0">
+        <span id="errorPeso" class="error"></span>
     </p>
     <p>
         <label for="Altura">Altura (en CM):</label>
         <input type="number" name="Altura" id="Altura" size="3" placeholder="Ingrese su altura: " maxlength="13">
+        <span id="errorAltura" class="error"></span>
     </p>
     <p>
         <button onclick="calcularIMC()">Calcular IMC</button>
@@ -66,12 +68,35 @@
 
 
 <script>
+    //Calculo el IMC del usuario y muestro cual es su sutiacion (obesidad, bajo,alto, saludable)
     function calcularIMC() {
+
         var peso = parseFloat(document.getElementById('Peso').value);
         var altura = parseFloat(document.getElementById('Altura').value) / 100; // convertir cm a metros
         var imc = peso / (altura * altura);
 
-        document.getElementById('resultadoIMC').innerText = imc.toFixed(2);
+        document.getElementById('errorPeso').innerText = '';
+        document.getElementById('errorAltura').innerText = '';
+        document.getElementById('resultadoIMC').innerText = '';
+        document.getElementById('recomendacion').innerText = '';
+
+
+        // Validar peso
+        if (isNaN(peso) || peso <= 0) {
+            document.getElementById('errorPeso').innerText = 'Por favor, ingrese un peso válido.';
+            error = true;
+        }
+
+        // Validar altura
+        if (isNaN(altura) || altura <= 0) {
+            document.getElementById('errorAltura').innerText = 'Por favor, ingrese una altura válida.';
+            error = true;
+        }
+
+        // Si hay errores, no continuar con el cálculo
+        if (error) {
+            return;
+        }
 
         if (imc < 18.5) {
             recomendacion = 'Bajo peso';
@@ -83,6 +108,10 @@
             recomendacion = 'Obesidad';
         }
         document.getElementById('recomendacion').innerText = recomendacion;
+
+
+
+
     }
 </script>
 </body>
