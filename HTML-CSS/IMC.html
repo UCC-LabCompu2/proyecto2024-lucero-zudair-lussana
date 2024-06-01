@@ -44,18 +44,19 @@
 <article id="articule1">
     <div class="imc">
         <div class="recomendacion">
-            <h4>NUESTRA RECOMENDACIÓN: <span id="recoemndacion"> </span> </h4>
+            <h4>NUESTRA RECOMENDACIÓN: </h4>
+            <ul id="recomendacion-lista"> </ul>
         </div>
     </div>
     <div class="imc">
         <h4>QUE ES EL ÍNDICE DE MASA CORPORAL?</h4>
         <p>
-            El índice de masa corporal (IMC) es el peso de una persona en kilogramos dividido por el cuadrado de la
-            estatura en metros. El IMC es un método de evaluación fácil y económico para la categoría de peso: bajo
-            peso, peso saludable, sobrepeso, y obesidad.
-            El IMC no mide la grasa corporal directamente, pero el IMC se correlaciona moderadamente con medidas más
-            directas de la grasa corporal. Además, el IMC parece estar tan fuertemente correlacionado con diversos
-            resultados metabólicos y de enfermedades como lo están estas medidas más directas de la grasa corporal.
+            El índice de masa corporal (IMC) es el peso de una persona en kilogramos dividido por el cuadrado de su
+            altura en metros. El IMC es un método de evaluación simple y económico para determinar la categoría de
+            peso: bajo peso, peso saludable, sobrepeso y obesidad. El IMC no mide la grasa corporal directamente,
+            pero se correlaciona moderadamente con medidas más precisas de la grasa corporal. Además, el IMC
+            parece estar tan fuertemente correlacionado con diversos resultados metabólicos y
+            enfermedades como estas medidas más precisas de la grasa corporal.
         </p>
     </div>
 </article>
@@ -66,34 +67,65 @@
 
 
 <script>
-    //Calculo el IMC del usuario y muestro cual es su sutiacion (obesidad, bajo,alto, saludable)
     function calcularIMC() {
         var peso = parseFloat(document.getElementById('Peso').value);
         var altura = parseFloat(document.getElementById('Altura').value) / 100; // convertir cm a metros
 
-      //errores a datos invalidos
-        if (isNaN(peso)|| peso<=0){
-            alert('Por favor, ingrese peso valido.');
+        // errores a datos invalidos
+        if (isNaN(peso) || peso <= 0) {
+            alert('Por favor, ingrese un peso válido.');
             return;
         }
-        if (isNaN(altura)||altura<=0){
-            alert('Por favor, ingrese una altura valida');
+        if (isNaN(altura) || altura <= 0) {
+            alert('Por favor, ingrese una altura válida.');
             return;
         }
+
         var imc = peso / (altura * altura);
         // Determinar la situación del IMC
         var situacion;
+        var recomendaciones = [];
+
         if (imc < 18.5) {
             situacion = 'Bajo peso';
+            recomendaciones = [
+                'Es importante que consultes a un nutricionista para diseñar un plan alimenticio adecuado para ti.',
+                'Considera aumentar la ingesta calórica con alimentos nutritivos y equilibrados.',
+                'Realiza ejercicios de resistencia para ganar masa muscular.'
+            ];
         } else if (imc >= 18.5 && imc < 24.9) {
             situacion = 'Peso saludable';
+            recomendaciones = [
+                '¡Mantén tu buen trabajo!',
+                'Sigue una dieta balanceada y continúa haciendo ejercicio regularmente.',
+                'Consulta a un profesional de la salud para chequeos periódicos.'
+            ];
         } else if (imc >= 25 && imc < 29.9) {
             situacion = 'Sobrepeso';
+            recomendaciones = [
+                'Considera adoptar una dieta más equilibrada y aumentar tu actividad física.',
+                'Consulta a un profesional de la salud para un plan personalizado que te ayude a perder peso de manera segura y efectiva.'
+            ];
         } else {
             situacion = 'Obesidad';
+            recomendaciones = [
+                'Es importante que consultes a un profesional de la salud para un plan integral que incluya dieta, ejercicio y posiblemente otros tratamientos.',
+                'Reducir tu peso puede mejorar significativamente tu salud.'
+            ];
         }
+
         document.getElementById('resultadoIMC').innerText = imc.toFixed(2);
         document.getElementById('situacion').innerText = situacion;
+
+        var listaRecomendaciones = document.getElementById('recomendacion-lista');
+        listaRecomendaciones.innerHTML = ''; // Limpiar lista existente
+
+        // Añadir nuevas recomendaciones
+        recomendaciones.forEach(function(recomendacion) {
+            var li = document.createElement('li');
+            li.innerText = recomendacion;
+            listaRecomendaciones.appendChild(li);
+        });
     }
 </script>
 </body>
