@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="MOVE.css" type="text/css">
+    <script type="text/javascript" src="Funciones.js"></script>
 </head>
 <body id="coach">
 <header>
@@ -76,53 +77,5 @@
         </p>
     </form>
 </div>
-
-<script>
-    function validarFormulario (){
-        var nombre = document.getElementById('nombre').value;
-        var apellido = document.getElementById('apellido').value;
-        var genero = document.querySelector('input[name="genero"]:checked');
-        var edad = document.getElementById('edad').value;
-        var telefono = document.getElementById('telefono').value;
-        var email = document.getElementById('email').value;
-        var tipoPlan = document.getElementById('tipoPlan').value;
-        var otro = document.getElementById('otro').value;
-
-        if (nombre.trim() === '') {
-            alert('Por favor, ingrese su nombre.');
-            return;
-        }
-        if (apellido.trim() === '') {
-            alert('Por favor, ingrese su apellido.');
-            return;
-        }
-        if (!genero) {
-            alert('Por favor, seleccione su género.');
-            return;
-        }
-        if (edad.trim() === '' || isNaN(edad) || edad>0 || edad<100) {
-            alert('Por favor, ingrese una edad válida.');
-            return;
-        }
-        if (telefono.trim() === '' || isNaN(telefono)) {
-            alert('Por favor, ingrese un número de teléfono válido.');
-            return;
-        }
-        if (email.trim() === '' || !validateEmail(email)) {
-            alert('Por favor, ingrese un correo electrónico válido.');
-            return;
-        }
-        if (tipoPlan === 'otros' && otro.trim() === '') {
-            alert('Por favor, complete con su objetivo.');
-            return;
-        }
-        alert('Formulario enviado con éxito.');
-    }
-
-    function validateEmail(email) {
-        var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        return re.test(email);
-    }
-</script>
 </body>
 </html>

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="MOVE.css" type="text/css">
+    <script type="text/javascript" src="Funciones.js"></script>
 </head>
 <body id="body-act">
 <header>
@@ -39,52 +40,7 @@
 </div>
 
 <script>
-    function mostrarInformacion() {
-        var actividadSeleccionada = document.getElementById('tipoActividad').value;
-        var titulo = '';
-        var descripcion = '';
-        var horario = '';
 
-        switch (actividadSeleccionada) {
-            case 'Funcional':
-                titulo = 'Funcional';
-                descripcion = 'El entrenamiento funcional se basa en realizar ejercicios que se adaptan a los movimientos naturales del cuerpo humano para trabajar de forma global músculos y articulaciones.';
-                horario = 'Horario: MARTES Y JUEVES 19:00-20:00';
-                break;
-            case 'Crossfit':
-                titulo = 'Crossfit';
-                descripcion = 'El CrossFit es un sistema de entrenamiento de fuerza y acondicionamiento basado en ejercicios funcionales constantemente variados realizados a una alta intensidad.';
-                horario = 'Horario: MIERCOLES Y VIERNES 19:30-20:30';
-                break;
-            case 'GAP':
-                titulo = 'GAP';
-                descripcion = 'El GAP es un conjunto de ejercicios orientados al trabajo de dichas zonas. Lo que se busca es poder tonificar y favorecer la quema de grasa gracias al gasto calórico realizado.';
-                horario = 'Horario: MIERCOLES Y VIERNES 17:00-18:30HS';
-                break;
-            case 'Kickboxing':
-                titulo = 'Kickboxing';
-                descripcion = 'Se trata de un deporte de contacto que alterna golpes propios del boxeo y patadas de artes marciales.';
-                horario = 'Horario: MIERCOLES Y VIERNES 19:30-20:30';
-                break;
-            case 'Zumba':
-                titulo = 'Zumba';
-                descripcion = 'Zumba es una disciplina deportiva en la que se realizan ejercicios aeróbicos al ritmo de música (merengue, samba, reggaeton, cumbia y salsa).';
-                horario = 'Horario: MARTES Y JUEVES 19:00-20:00';
-                break;
-            case 'Yoga':
-                titulo = 'Yoga';
-                descripcion = 'El yoga es una práctica física, mental y espiritual diseñada para tener una buena vida y cuyo fin último es alcanzar el samadhi (liberación, paz, felicidad).';
-                horario = 'Horario: LUNES Y MIERCOLES 17:00-18:30HS';
-                break;
-            default:
-                document.getElementById('infoActividad').style.display = 'none';
-                return;
-        }
-        document.getElementById('tituloActividad').innerText = titulo;
-        document.getElementById('descripcionActividad').innerText = descripcion;
-        document.getElementById('horarioActividad').innerText = horario;
-        document.getElementById('infoActividad').style.display = 'block';
-    }
 </script>
 </body>
 </html>
