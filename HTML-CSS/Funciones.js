@@ -7,8 +7,8 @@
 
 /*Con los vlaores ingresados (peso, altura) los verifica, calcula IMC y por ultima muestra recomendacion*/
 function calcularIMC() {
-    var peso = parseFloat(document.getElementById('Peso').value);
-    var altura = parseFloat(document.getElementById('Altura').value) / 100; // convertir cm a metros
+    let peso = parseFloat(document.getElementById('Peso').value);
+    let altura = parseFloat(document.getElementById('Altura').value) / 100; // convertir cm a metros
     console.log(altura)
 
     // errores a datos invalidos
@@ -172,4 +172,38 @@ function mostrarInformacion() {
     document.getElementById('descripcionActividad').innerText = descripcion;
     document.getElementById('horarioActividad').innerText = horario;
     document.getElementById('infoActividad').style.display = 'block';
+}
+
+var animarId;
+var x=0;
+var dx=2;
+function animarCorrer(){
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    const img = new Image();
+    img.src = "Imagenes/animacion.png";
+    img.onload = function (){
+        canva.width = canva.width;
+        ctx.drawImage(img, x, 10);
+    }
+    if(x>canvas.width){
+        x=0;
+    }
+    x+=dx;
+    animarId= requestAnimationFrame(animarCorrer);
+}
+function correr() {
+    img.onload = function () {
+        animarId = requestAnimationFrame(animarCorrer);
+    };
+    if (img.complete) { // Para manejar la caché del navegador
+        animarId = requestAnimationFrame(animarCorrer);
+    }
+
+    // Detener la animación después de 10 segundos
+    setTimeout(detener, 10000);
+}
+
+function detener() {
+    cancelAnimationFrame(animarId);
 }
