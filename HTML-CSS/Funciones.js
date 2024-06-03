@@ -9,13 +9,15 @@
 function calcularIMC() {
     var peso = parseFloat(document.getElementById('Peso').value);
     var altura = parseFloat(document.getElementById('Altura').value) / 100; // convertir cm a metros
+    console.log(altura)
 
     // errores a datos invalidos
-    if (isNaN(peso) || peso < 0 || peso > 500) {
+    if (isNaN(peso) || peso <= 0 || peso > 500) {
         alert('Por favor, ingrese un peso válido.');
         return;
     }
-    if (isNaN(altura) || altura<0 || altura>=220) {
+
+    if (isNaN(altura) || altura<= 0 || altura>2.2) {
         alert('Por favor, ingrese una altura válida.');
         return;
     }
@@ -83,8 +85,16 @@ function validarFormulario (){
         alert('Por favor, ingrese su nombre.');
         return;
     }
+    if (/[^a-zA-Z\s]/.test(nombre)) {
+        alert('El nombre no debe contener números ni caracteres especiales.');
+        return;
+    }
     if (apellido.trim() === '') {
         alert('Por favor, ingrese su apellido.');
+        return;
+    }
+    if (/[^a-zA-Z\s]/.test(apellido)) {
+        alert('El apellido no debe contener números ni caracteres especiales.');
         return;
     }
     if (!genero) {

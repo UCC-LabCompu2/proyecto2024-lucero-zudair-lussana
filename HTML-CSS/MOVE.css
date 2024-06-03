@@ -9,8 +9,8 @@ div.datos{
     text-align: left;
     color: #ffffff;
     font-family: "Bebas Neue", sans-serif;
-    font-size: 13px;
-    background-color: #060909;
+    font-size: 9px;
+    background-color: rgba(6, 9, 9, 0.32);
     border-radius: 10px;
     width: 250px;
 }
