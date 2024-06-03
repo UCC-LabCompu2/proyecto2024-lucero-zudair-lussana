@@ -1,12 +1,10 @@
 /**
- * Realiza las conversiones de un valor ingresado por usuriario en unidades de metros, pulgadas, pies y yardas
- * @method convertirUnidadades
+ * Con los vlaores ingresados (peso, altura) los verifica, calcula IMC y por ultima muestra recomendacion
+ * @method calcularIMC
  */
-
-/*Con los vlaores ingresados (peso, altura) los verifica, calcula IMC y por ultima muestra recomendacion*/
 function calcularIMC() {
     let peso = parseFloat(document.getElementById('Peso').value);
-    let altura = parseFloat(document.getElementById('Altura').value) / 100; // convertir cm a metros
+    let altura = parseFloat(document.getElementById('Altura').value) / 100;
 
     // errores a datos invalidos
     if (isNaN(peso) || peso <= 0 || peso > 500) {
@@ -19,8 +17,8 @@ function calcularIMC() {
         return;
     }
 
-    var imc = peso / (altura * altura);
     // Determinar la situación del IMC
+    var imc = peso / (altura * altura);
     var situacion;
     var recomendaciones = [];
 
@@ -51,12 +49,12 @@ function calcularIMC() {
             'Reducir tu peso puede mejorar significativamente tu salud.'
         ];
     }
-
     document.getElementById('resultadoIMC').innerText = imc.toFixed(2);
     document.getElementById('situacion').innerText = situacion;
-
     var listaRecomendaciones = document.getElementById('recomendacion-lista');
-    listaRecomendaciones.innerHTML = ''; // Limpiar lista existente
+
+    // Limpiar lista existente
+    listaRecomendaciones.innerHTML = '';
 
     // Añadir nuevas recomendaciones
     recomendaciones.forEach(function (recomendacion) {
@@ -67,7 +65,10 @@ function calcularIMC() {
 
 }
 
-/*Asegura que todos los datos del formularios sean ingresados y validos*/
+/**
+ * Asegura que todos los datos del formularios sean ingresados y validos
+ * @method validarFormulario
+ */
 function validarFormulario (){
     var nombre = document.getElementById('nombre').value;
     var apellido = document.getElementById('apellido').value;
@@ -98,7 +99,7 @@ function validarFormulario (){
         alert('Por favor, seleccione su género.');
         return;
     }
-    if (edad.trim() === '' || isNaN(edad) || edad>0 || edad<100) {
+    if (edad.trim() === '' || isNaN(edad) || edad<=0 || edad>100) {
         alert('Por favor, ingrese una edad válida.');
         return;
     }
@@ -116,14 +117,21 @@ function validarFormulario (){
     }
     alert('Formulario enviado con éxito.');
 }
-/*Verifica que el mail ingresado cumpla correctamente*/
+
+/**
+ * Verifica que el mail ingresado cumpla correctamente
+ * @method validateEmail
+ * @param {boolean} email
+ */
 function validateEmail(email) {
     var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return re.test(email);
 }
 
-
-/* Al elegir una actvidad se muestra su descripcion y horarios disponibles*/
+/**
+ * Al elegir una actvidad se muestra su descripcion y horarios disponibles
+ * @method mostrarInformacion
+ */
 function mostrarInformacion() {
     var actividadSeleccionada = document.getElementById('tipoActividad').value;
     var titulo = '';
@@ -171,36 +179,26 @@ function mostrarInformacion() {
     document.getElementById('infoActividad').style.display = 'block';
 }
 
-var animarId;
-var x=0;
-var dx=2;
+var x= 0;
+var dx= 2;
 function animarCorrer(){
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     const img = new Image();
-    img.src = "Imagenes/animacion.png";
+    img.src = "Imagenes/animacionFinal.png";
+
     img.onload = function (){
-        canva.width = canva.width;
-        ctx.drawImage(img, x, 10);
+        canvas.width = canvas.width;
+        ctx.drawImage(img, x, 10, 105, 105);
+        requestAnimationFrame(animarCorrer);
     }
+
     if(x>canvas.width){
-        x=0;
+        x = 0;
     }
     x+=dx;
-    animarId= requestAnimationFrame(animarCorrer);
 }
+
 function correr() {
-    img.onload = function () {
-        animarId = requestAnimationFrame(animarCorrer);
-    };
-    if (img.complete) { // Para manejar la caché del navegador
-        animarId = requestAnimationFrame(animarCorrer);
-    }
-
-    // Detener la animación después de 10 segundos
-    setTimeout(detener, 10000);
-}
-
-function detener() {
-    cancelAnimationFrame(animarId);
+    requestAnimationFrame(animarCorrer);
 }
