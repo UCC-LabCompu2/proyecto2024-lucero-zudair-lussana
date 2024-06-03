@@ -101,7 +101,7 @@ function validarFormulario (){
         alert('Por favor, seleccione su género.');
         return;
     }
-    if (edad.trim() === '' || isNaN(edad) || edad>0 || edad<100) {
+    if (edad.trim() === '' || isNaN(edad) || edad<=0 || edad>100) {
         alert('Por favor, ingrese una edad válida.');
         return;
     }
