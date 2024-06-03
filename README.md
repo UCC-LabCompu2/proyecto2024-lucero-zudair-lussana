@@ -3,7 +3,7 @@
 Proyecto para laboratorio de computación 2.
 
 - [Autores:](#Autores-)
-- [Contenido-descripcion:](#Contenido/descripcion)
+- [Contenido-descripción:](#Contenido/descripcion)
 - [Tecnologías usadas:](#Tecnologías-usadas)
 
 ## Autores:
@@ -11,7 +11,7 @@ Proyecto para laboratorio de computación 2.
 * **Lucero Zudaire** Maria Luz
 * **Lussana** Ana Paula
 
-## Contenido/descripcion:
+## Contenido/descripción:
 
 Repositorio para el proyecto para laboratorio de computación 2, vamos a realizar una página sobre un gimnasio.
 
