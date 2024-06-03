@@ -9,11 +9,12 @@ function calcularIMC() {
     let altura = parseFloat(document.getElementById('Altura').value) / 100; // convertir cm a metros
 
     // errores a datos invalidos
-    if (isNaN(peso) || peso < 0 || peso > 500) {
+    if (isNaN(peso) || peso <= 0 || peso > 500) {
         alert('Por favor, ingrese un peso válido.');
         return;
     }
-    if (isNaN(altura) || altura<0 || altura>=220) {
+
+    if (isNaN(altura) || altura<= 0 || altura>2.2) {
         alert('Por favor, ingrese una altura válida.');
         return;
     }
@@ -81,8 +82,16 @@ function validarFormulario (){
         alert('Por favor, ingrese su nombre.');
         return;
     }
+    if (/[^a-zA-Z\s]/.test(nombre)) {
+        alert('El nombre no debe contener números ni caracteres especiales.');
+        return;
+    }
     if (apellido.trim() === '') {
         alert('Por favor, ingrese su apellido.');
+        return;
+    }
+    if (/[^a-zA-Z\s]/.test(apellido)) {
+        alert('El apellido no debe contener números ni caracteres especiales.');
         return;
     }
     if (!genero) {
@@ -160,4 +169,38 @@ function mostrarInformacion() {
     document.getElementById('descripcionActividad').innerText = descripcion;
     document.getElementById('horarioActividad').innerText = horario;
     document.getElementById('infoActividad').style.display = 'block';
+}
+
+var animarId;
+var x=0;
+var dx=2;
+function animarCorrer(){
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    const img = new Image();
+    img.src = "Imagenes/animacion.png";
+    img.onload = function (){
+        canva.width = canva.width;
+        ctx.drawImage(img, x, 10);
+    }
+    if(x>canvas.width){
+        x=0;
+    }
+    x+=dx;
+    animarId= requestAnimationFrame(animarCorrer);
+}
+function correr() {
+    img.onload = function () {
+        animarId = requestAnimationFrame(animarCorrer);
+    };
+    if (img.complete) { // Para manejar la caché del navegador
+        animarId = requestAnimationFrame(animarCorrer);
+    }
+
+    // Detener la animación después de 10 segundos
+    setTimeout(detener, 10000);
+}
+
+function detener() {
+    cancelAnimationFrame(animarId);
 }

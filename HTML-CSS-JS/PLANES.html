@@ -8,8 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="MOVE.css" type="text/css">
+    <script type="text/javascript" src="Funciones.js"></script>
+
 </head>
-<body id="body-planes">
+<body id="body-planes" onload="animarCorrer()">
 <header>
     <nav>
         <ul>
@@ -34,7 +36,7 @@
 <div class="planes1">
     <a href="COACH.html" target="_self">COACH ONLINE</a>
 </div>
-<div class="canvas-container">
+<div class="canvas" id="canvas">
     <canvas>Your browser does not support the HTML5 canvas tag.</canvas>
 </div>
 </body>
