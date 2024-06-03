@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="MOVE.css" type="text/css">
+    <script type="text/javascript" src="Funciones.js"></script>
 </head>
 <body id="body-act">
 <header>
@@ -19,68 +20,27 @@
         </ul>
     </nav>
 </header>
-<div class="act.1">
-    <h1 id="actvidades1">ACTIVIDADES</h1>
+<div class="act1">
+    <h1 id="actividades1">ACTIVIDADES</h1>
     ACTIVIDAD:
-    <select name="tipoActividad" id="tipoActividad">
-        <option value="Zumba">ZUMBA</option>
-        <option value="Crossfit">CROSSFIT</option>
-        <option value="Kickboxing">KICKBOXING</option>
+    <select name="tipoActividad" id="tipoActividad" onchange="mostrarInformacion()">
+        <option value="">Seleccionar actividad</option>
         <option value="Funcional">FUNCIONAL</option>
-        <option value="Gap">GAP</option>
+        <option value="Crossfit">CROSSFIT</option>
+        <option value="GAP">GAP</option>
+        <option value="Kickboxing">KICKBOXING</option>
+        <option value="Zumba">ZUMBA</option>
+        <option value="Yoga">YOGA</option>
     </select>
-    <button type="button">
-        Mas Informacion
-    </button>
 </div>
-<div class="act">
-    Funcional
-    <p>
-        El entrenamiento funcional se basa en realizar ejercicios que se adaptan a los movimientos naturales del cuerpo
-        humano para trabajar de forma global músculos y articulaciones.
-    </p>
-    <p>
-        Horario: MARTES Y JUEVES 19:00-20:00
-    </p>
-    Crossfit
-    <p>
-        El CrossFit es un sistema de entrenamiento de fuerza y acondicionamiento basado en ejercicios funcionales
-        constantemente variados realizados a una alta intensidad.
-    </p>
-    <p>
-        Horario: MIERCOLES Y VIERNES 19:30-20:30
-    </p>
-    GAP
-    <p>
-        El GAP es un conjunto de ejercicios orientados al trabajo de dichas zonas.Lo que se busca es poder tonificar y
-        favorecer la quema de grasa gracias al gasto calórico realizado.
-    </p>
-    <p>
-        Horario: MIERCOLES Y VIERNES 17:00-18:30HS
-    </p>
-    Kickboxing
-    <p>
-        Se trata de un deporte de contacto que alterna golpes propios del boxeo y patadas de artes marciales.
-    </p>
-    <p>
-        Horario: MIERCOLES Y VIERNES 19:30-20:30
-    </p>
-    Zumba
-    <p>
-        Zumba es una disciplina deportiva en la que se realizan ejercicios aeróbicos al ritmo de música (merengue,
-        samba, reggaeton, cumbia y salsa).
-    </p>
-    <p>
-        Horario: MARTES Y JUEVES 19:00-20:00
-    </p>
-    Yoga
-    <p>
-        El yoga es una práctica física, mental y espiritual diseñada para tener una buena vida y cuyo fin último es
-        alcanzar el samadhi (liberación, paz, felicidad)
-    </p>
-    <p>
-        Horario: LUNES Y MIERCOLES 17:00-18:30HS
-    </p>
+<div id="infoActividad" class="act" style="display:none;">
+    <h2 id="tituloActividad"></h2>
+    <p id="descripcionActividad"></p>
+    <p id="horarioActividad"></p>
 </div>
+
+<script>
+
+</script>
 </body>
 </html>
