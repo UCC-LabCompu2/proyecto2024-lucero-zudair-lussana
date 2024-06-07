@@ -2,7 +2,7 @@
  * Con los vlaores ingresados (peso, altura) los verifica, calcula IMC y por ultima muestra recomendacion
  * @method calcularIMC
  */
-function calcularIMC() {
+const calcularIMC = () =>{
     let peso = parseFloat(document.getElementById('Peso').value);
     let altura = parseFloat(document.getElementById('Altura').value) / 100;
 
@@ -12,15 +12,15 @@ function calcularIMC() {
         return;
     }
 
-    if (isNaN(altura) || altura<= 0 || altura>2.2) {
+    if (isNaN(altura) || altura<=1 || altura>2.2) {
         alert('Por favor, ingrese una altura válida.');
         return;
     }
 
     // Determinar la situación del IMC
-    var imc = peso / (altura * altura);
-    var situacion;
-    var recomendaciones = [];
+    const imc = peso / (altura * altura);
+    let situacion;
+    let recomendaciones = [];
 
     if (imc < 18.5) {
         situacion = 'Bajo peso';
@@ -51,14 +51,14 @@ function calcularIMC() {
     }
     document.getElementById('resultadoIMC').innerText = imc.toFixed(2);
     document.getElementById('situacion').innerText = situacion;
-    var listaRecomendaciones = document.getElementById('recomendacion-lista');
+    const listaRecomendaciones = document.getElementById('recomendacion-lista');
 
     // Limpiar lista existente
     listaRecomendaciones.innerHTML = '';
 
     // Añadir nuevas recomendaciones
-    recomendaciones.forEach(function (recomendacion) {
-        var li = document.createElement('li');
+    recomendaciones.forEach(recomendacion => {
+        const li = document.createElement('li');
         li.innerText = recomendacion;
         listaRecomendaciones.appendChild(li);
     });
@@ -69,15 +69,15 @@ function calcularIMC() {
  * Asegura que todos los datos del formularios sean ingresados y validos
  * @method validarFormulario
  */
-function validarFormulario (){
-    var nombre = document.getElementById('nombre').value;
-    var apellido = document.getElementById('apellido').value;
-    var genero = document.querySelector('input[name="genero"]:checked');
-    var edad = document.getElementById('edad').value;
-    var telefono = document.getElementById('telefono').value;
-    var email = document.getElementById('email').value;
-    var tipoPlan = document.getElementById('tipoPlan').value;
-    var otro = document.getElementById('otro').value;
+const validarFormulario  = () => {
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const genero = document.querySelector('input[name="genero"]:checked');
+    const edad = document.getElementById('edad').value;
+    const telefono = document.getElementById('telefono').value;
+    const email = document.getElementById('email').value;
+    const tipoPlan = document.getElementById('tipoPlan').value;
+    const otro = document.getElementById('otro').value;
 
     if (nombre.trim() === '') {
         alert('Por favor, ingrese su nombre.');
@@ -103,7 +103,7 @@ function validarFormulario (){
         alert('Por favor, ingrese una edad válida.');
         return;
     }
-    if (telefono.trim() === '' || isNaN(telefono)) {
+    if (telefono.trim() === '' || isNaN(telefono) || telefono.length <9 || telefono.length > 11) {
         alert('Por favor, ingrese un número de teléfono válido.');
         return;
     }
@@ -123,8 +123,8 @@ function validarFormulario (){
  * @method validateEmail
  * @param {boolean} email
  */
-function validateEmail(email) {
-    var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+const validateEmail = email => {
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return re.test(email);
 }
 
@@ -132,11 +132,11 @@ function validateEmail(email) {
  * Al elegir una actvidad se muestra su descripcion y horarios disponibles
  * @method mostrarInformacion
  */
-function mostrarInformacion() {
-    var actividadSeleccionada = document.getElementById('tipoActividad').value;
-    var titulo = '';
-    var descripcion = '';
-    var horario = '';
+const mostrarInformacion = () => {
+    const actividadSeleccionada = document.getElementById('tipoActividad').value;
+    let titulo = '';
+    let descripcion = '';
+    let horario = '';
 
     switch (actividadSeleccionada) {
         case 'Funcional':
@@ -179,9 +179,9 @@ function mostrarInformacion() {
     document.getElementById('infoActividad').style.display = 'block';
 }
 
-var x= 0;
-var dx= 2;
-function animarCorrer(){
+let x= 0;
+const dx= 2;
+const animarCorrer = () => {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     const img = new Image();
@@ -199,6 +199,6 @@ function animarCorrer(){
     x+=dx;
 }
 
-function correr() {
+const correr = () => {
     requestAnimationFrame(animarCorrer);
 }
