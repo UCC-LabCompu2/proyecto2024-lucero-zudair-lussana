@@ -1,5 +1,5 @@
 /**
- * Con los vlaores ingresados (peso, altura) los verifica, calcula IMC y por ultima muestra recomendacion
+ * Con los valores ingresados (peso, altura) los verifica, calcula IMC y por ultima muestra recomendacion
  * @method calcularIMC
  */
 const calcularIMC = () => {
@@ -65,59 +65,8 @@ const calcularIMC = () => {
 
     // Actualizar la imagen en el canvas según el resultado del IMC
     dibujarSegunResultado(situacion);
-// Llamar a la función para calcular el IMC y actualizar la imagen en el canvas
-    calcularIMC()
 };
 
-// Función para cargar imágenes
-function cargarImagenes(callback) {
-    var imagenes = {};
-    var cargaImagenes = 0;
-    var numImagenes = 3; // Número total de imágenes a cargar
-
-    function cargarImagen(nombre, ruta) {
-        var imagen = new Image();
-        imagen.onload = function() {
-            cargaImagenes++;
-            if (cargaImagenes === numImagenes) {
-                callback(imagenes);
-            }
-        };
-        imagen.src = ruta;
-        imagenes[nombre] = imagen;
-    }
-
-    // Cargar las imágenes
-    cargarImagen('sobrepeso', 'Imagenes/imagen_sobrepeso.jpg');
-    cargarImagen('pesosaludable', 'Imagenes/imagen_pesosaludable.jpg');
-    cargarImagen('bajopeso', 'Imagenes/imagen_bajopeso.jpg');
-}
-
-// Función para dibujar imagen en el lienzo
-function dibujarImagen(canvas, ctx, imagenes, nombreImagen) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(imagenes[nombreImagen], 0, 0, canvas.width, canvas.height);
-}
-
-// Función para obtener el resultado y dibujar la imagen correspondiente
-function dibujarSegunResultado(resultado) {
-    var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
-
-    // Cargar las imágenes
-    cargarImagenes(function(imagenes) {
-        if (resultado === 'sobrepeso') {
-            dibujarImagen(canvas, ctx, imagenes,'sobrepeso');
-        } else if (resultado === 'pesosaludable') {
-            dibujarImagen(canvas, ctx, imagenes,'pesosaludable');
-        }else if (resultado === 'bajopeso') {
-            dibujarImagen(canvas, ctx, imagenes,'bajopeso');
-        } else {
-            // Manejar otros resultados o errores
-            console.error('Resultado no válido');
-        }
-    });
-}
 
 
 /**
