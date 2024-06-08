@@ -57,22 +57,28 @@ const calcularIMC = () => {
 
     // Limpiar lista existente
     listaRecomendaciones.innerHTML = '';
+
     // Añadir nuevas recomendaciones
     recomendaciones.forEach(recomendacion => {
         const li = document.createElement('li');
         li.innerText = recomendacion;
-        listaRecomendaciones.appendChild(li);
+        listaRecomendaciones.appendChild(li);//Agrega la recomendación dentro del elemento de lista HTML
     });
-
     cargarImagen(rutaImagen, 'canvas');
 };
+
+/**
+ * Carga una imagen desde una ruta especificada y la dibuja en el canvas
+ * @method calcularIMC
+ * @param rutaImagen
+ * @param canvasId
+ */
 function cargarImagen(rutaImagen, canvasId) {
     let canvas = document.getElementById(canvasId);
     let ctx = canvas.getContext('2d');
-
     let imagen = new Image();
     imagen.onload = function() {
-        ctx.clearRect(0, 0, 500, 500);
+        ctx.clearRect(0, 0, canvas.width, canvas.height); //limpia el lienzo
         ctx.drawImage(imagen, 0, 0, canvas.width, canvas.height);
     };
     imagen.src = rutaImagen;
@@ -96,17 +102,23 @@ const validarFormulario  = () => {
         alert('Por favor, ingrese su nombre.');
         return;
     }
-    if (/[^a-zA-Z\s]/.test(nombre)) {
-        alert('El nombre no debe contener números ni caracteres especiales.');
-        return;
+    for (let i = 0; i < nombre.length; i++) {
+        let char = nombre[i];
+        if (!((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || char === ' ')) {
+            alert('El nombre no debe contener números ni caracteres especiales.');
+            return;
+        }
     }
     if (apellido.trim() === '') {
         alert('Por favor, ingrese su apellido.');
         return;
     }
-    if (/[^a-zA-Z\s]/.test(apellido)) {
-        alert('El apellido no debe contener números ni caracteres especiales.');
-        return;
+    for (let i = 0; i < apellido.length; i++) {
+        let char = apellido[i];
+        if (!((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || char === ' ')) {
+            alert('El apellido no debe contener números ni caracteres especiales.');
+            return;
+        }
     }
     if (!genero) {
         alert('Por favor, seleccione su género.');
@@ -190,5 +202,5 @@ const mostrarInformacion = () => {
 document.getElementById('tituloActividad').innerText = titulo;
 document.getElementById('descripcionActividad').innerText = descripcion;
 document.getElementById('horarioActividad').innerText = horario;
-document.getElementById('infoActividad').style.display = 'block'
+document.getElementById('infoActividad').style.display = 'block';
 }
