@@ -2,7 +2,7 @@
  * Con los vlaores ingresados (peso, altura) los verifica, calcula IMC y por ultima muestra recomendacion
  * @method calcularIMC
  */
-const calcularIMC = () =>{
+const calcularIMC = () => {
     let peso = parseFloat(document.getElementById('Peso').value);
     let altura = parseFloat(document.getElementById('Altura').value) / 100;
 
@@ -12,7 +12,7 @@ const calcularIMC = () =>{
         return;
     }
 
-    if (isNaN(altura) || altura<=1 || altura>2.2) {
+    if (isNaN(altura) || altura <= 1 || altura > 2.2) {
         alert('Por favor, ingrese una altura válida.');
         return;
     }
@@ -20,7 +20,7 @@ const calcularIMC = () =>{
     // Determinar la situación del IMC
     const imc = peso / (altura * altura);
     let situacion;
-    let recomendaciones = [];
+    let recomendaciones;
 
     if (imc < 18.5) {
         situacion = 'Bajo peso';
@@ -63,7 +63,12 @@ const calcularIMC = () =>{
         listaRecomendaciones.appendChild(li);
     });
 
-}
+    // Actualizar la imagen en el canvas según el resultado del IMC
+    dibujarSegunResultado(situacion);
+// Llamar a la función para calcular el IMC y actualizar la imagen en el canvas
+    calcularIMC()
+};
+
 // Función para cargar imágenes
 function cargarImagenes(callback) {
     var imagenes = {};
@@ -114,30 +119,7 @@ function dibujarSegunResultado(resultado) {
     });
 }
 
-const calcularIMC = () => {
-    var peso = parseFloat(document.getElementById('Peso').value);
-    var altura = parseFloat(document.getElementById('Altura').value) / 100;
 
-    // Determinar la situación del IMC
-    const imc = peso / (altura * altura);
-    let situacion;
-
-    if (imc < 18.5) {
-        situacion = 'bajopeso';
-    } else if (imc >= 18.5 && imc < 24.9) {
-        situacion = 'pesosaludable';
-    } else if (imc >= 25 && imc < 29.9) {
-        situacion = 'sobrepeso';
-    } else {
-        situacion = 'obesidad';
-    }
-
-    // Actualizar la imagen en el canvas según el resultado del IMC
-    dibujarSegunResultado(situacion);
-};
-
-// Llamar a la función para calcular el IMC y actualizar la imagen en el canvas
-calcularIMC();
 /**
  * Asegura que todos los datos del formularios sean ingresados y validos
  * @method validarFormulario
@@ -246,8 +228,9 @@ const mostrarInformacion = () => {
             document.getElementById('infoActividad').style.display = 'none';
             return;
     }
-    document.getElementById('tituloActividad').innerText = titulo;
-    document.getElementById('descripcionActividad').innerText = descripcion;
-    document.getElementById('horarioActividad').innerText = horario;
-    document.getElementById('infoActividad').style.display = 'block';
+
+document.getElementById('tituloActividad').innerText = titulo;
+document.getElementById('descripcionActividad').innerText = descripcion;
+document.getElementById('horarioActividad').innerText = horario;
+document.getElementById('infoActividad').style.display = 'block'
 }
