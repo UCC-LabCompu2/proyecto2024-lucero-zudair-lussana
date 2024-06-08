@@ -1,7 +1,7 @@
 /**
-* Con los valores ingresados (peso, altura) los verifica, calcula IMC y por ultima muestra recomendacion
-* @method calcularIMC
-*/
+ * Con los valores ingresados (peso, altura) los verifica, calcula IMC y por ultima muestra recomendacion
+ * @method calcularIMC
+ */
 const calcularIMC = () => {
     let peso = parseFloat(document.getElementById('Peso').value);
     let altura = parseFloat(document.getElementById('Altura').value) / 100;
@@ -27,7 +27,6 @@ const calcularIMC = () => {
             'Considera aumentar la ingesta calórica con alimentos nutritivos y equilibrados.',
             'Realiza ejercicios de resistencia para ganar masa muscular.'
         ];
-        rutaImagen = 'Imagenes/imagen_bajopeso.jpg';
     } else if (imc >= 18.5 && imc < 24.9) {
         situacion = 'Peso saludable';
         recomendaciones = [
@@ -35,21 +34,20 @@ const calcularIMC = () => {
             'Sigue una dieta balanceada y continúa haciendo ejercicio regularmente.',
             'Consulta a un profesional de la salud para chequeos periódicos.',
         ];
-        rutaImagen = 'Imagenes/imagen_pesosaludable.jpg';
+
     } else if (imc >= 25 && imc < 29.9) {
         situacion = 'Sobrepeso';
         recomendaciones = [
             'Considera adoptar una dieta más equilibrada y aumentar tu actividad física.',
             'Consulta a un profesional de la salud para un plan personalizado que te ayude a perder peso de manera segura y efectiva.'
         ];
-        rutaImagen = 'Imagenes/imagen_sobrepeso.jpg';
+
     } else {
         situacion = 'Obesidad';
         recomendaciones = [
             'Es importante que consultes a un profesional de la salud para un plan integral que incluya dieta, ejercicio y posiblemente otros tratamientos.',
             'Reducir tu peso puede mejorar significativamente tu salud.'
         ];
-        rutaImagen = 'Imagenes/imagen_sobrepeso.jpg';
     }
     document.getElementById('resultadoIMC').innerText = imc.toFixed(2);
     document.getElementById('situacion').innerText = situacion;
@@ -57,33 +55,15 @@ const calcularIMC = () => {
 
     // Limpiar lista existente
     listaRecomendaciones.innerHTML = '';
-// Añadir nuevas recomendaciones
+    // Añadir nuevas recomendaciones
     recomendaciones.forEach(recomendacion => {
         const li = document.createElement('li');
         li.innerText = recomendacion;
         listaRecomendaciones.appendChild(li);//Agrega la recomendación dentro del elemento de lista HTML
     });
-    cargarImagen(rutaImagen, 'canvas');
 };
 
 /**
- * Carga una imagen desde una ruta especificada y la dibuja en el canvas
- * @method calcularIMC
- * @param rutaImagen
- * @param canvasId
- */
-function cargarImagen(rutaImagen, canvasId) {
-    let canvas = document.getElementById(canvasId);
-    let ctx = canvas.getContext('2d');
-    let imagen = new Image();
-    imagen.onload = function() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height0); //limpia el lienzo
-        ctx.drawImage(imagen, 0, 0, canvas.width, canvas.height);
-    };
-    imagen.src = rutaImagen;
-}
-
-    /**
  * Asegura que todos los datos del formularios sean ingresados y validos
  * @method validarFormulario
  */
@@ -161,37 +141,44 @@ const mostrarInformacion = () => {
     let titulo = '';
     let descripcion = '';
     let horario = '';
+    let rutaIm = '';
 
     switch (actividadSeleccionada) {
         case 'Funcional':
             titulo = 'Funcional';
             descripcion = 'El entrenamiento funcional se basa en realizar ejercicios que se adaptan a los movimientos naturales del cuerpo humano para trabajar de forma global músculos y articulaciones.';
             horario = 'Horario: MARTES Y JUEVES 19:00-20:00';
+            rutaIm = 'Imagenes/func.jpg';
             break;
         case 'Crossfit':
             titulo = 'Crossfit';
             descripcion = 'El CrossFit es un sistema de entrenamiento de fuerza y acondicionamiento basado en ejercicios funcionales constantemente variados realizados a una alta intensidad.';
             horario = 'Horario: MIERCOLES Y VIERNES 19:30-20:30';
+            rutaIm = 'Imagenes/cross.jpg';
             break;
         case 'GAP':
             titulo = 'GAP';
             descripcion = 'El GAP es un conjunto de ejercicios orientados al trabajo de dichas zonas. Lo que se busca es poder tonificar y favorecer la quema de grasa gracias al gasto calórico realizado.';
             horario = 'Horario: MIERCOLES Y VIERNES 17:00-18:30HS';
+            rutaIm = 'Imagenes/gap.jpg';
             break;
         case 'Kickboxing':
             titulo = 'Kickboxing';
             descripcion = 'Se trata de un deporte de contacto que alterna golpes propios del boxeo y patadas de artes marciales.';
             horario = 'Horario: MIERCOLES Y VIERNES 19:30-20:30';
+            rutaIm = 'Imagenes/kick.jpg';
             break;
         case 'Zumba':
             titulo = 'Zumba';
             descripcion = 'Zumba es una disciplina deportiva en la que se realizan ejercicios aeróbicos al ritmo de música (merengue, samba, reggaeton, cumbia y salsa).';
             horario = 'Horario: MARTES Y JUEVES 19:00-20:00';
+            rutaIm = 'Imagenes/zum.jpg';
             break;
         case 'Yoga':
             titulo = 'Yoga';
             descripcion = 'El yoga es una práctica física, mental y espiritual diseñada para tener una buena vida y cuyo fin último es alcanzar el samadhi (liberación, paz, felicidad).';
             horario = 'Horario: LUNES Y MIERCOLES 17:00-18:30HS';
+            rutaIm = 'Imagenes/yoga.jpg';
             break;
         default:
             document.getElementById('infoActividad').style.display = 'none';
@@ -202,4 +189,22 @@ const mostrarInformacion = () => {
     document.getElementById('descripcionActividad').innerText = descripcion;
     document.getElementById('horarioActividad').innerText = horario;
     document.getElementById('infoActividad').style.display = 'block';
+    cargarIm(rutaIm,'canvasact');
+}
+/**
+ * Carga una imagen en un canvas
+ * @method cargarIm
+ * @param {string} src - La ruta de la imagen
+ * @param {string} canvasId - El ID del canvas donde se cargará la imagen
+ */
+const cargarIm = (src, canvasId) => {
+    const canvas = document.getElementById(canvasId);
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+
+    img.onload = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpia el canvas antes de dibujar
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    };
+    img.src = src;
 }

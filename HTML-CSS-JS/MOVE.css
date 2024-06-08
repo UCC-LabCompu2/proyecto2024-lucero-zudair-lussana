@@ -155,15 +155,14 @@ div.planes1{
     border-radius: 50px;
     width: 500px;
 }
-div.canvas{
-    position: absolute;
-    top: 890px;
-    width: 50%;
+#canvasact{
+    position: marker;
+    top: 100px;
+    width: 20%;
     height: 50%;
     border: 1px solid rgba(0, 0, 0, 0.87);
     background-color: rgba(37, 35, 35, 0.89);
 }
-
 #coach{
     background: url("Imagenes/fondo_coach.jpg");
     background-repeat: no-repeat;
