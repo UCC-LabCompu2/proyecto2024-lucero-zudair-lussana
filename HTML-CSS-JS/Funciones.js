@@ -64,7 +64,80 @@ const calcularIMC = () =>{
     });
 
 }
+// Función para cargar imágenes
+function cargarImagenes(callback) {
+    var imagenes = {};
+    var cargaImagenes = 0;
+    var numImagenes = 3; // Número total de imágenes a cargar
 
+    function cargarImagen(nombre, ruta) {
+        var imagen = new Image();
+        imagen.onload = function() {
+            cargaImagenes++;
+            if (cargaImagenes === numImagenes) {
+                callback(imagenes);
+            }
+        };
+        imagen.src = ruta;
+        imagenes[nombre] = imagen;
+    }
+
+    // Cargar las imágenes
+    cargarImagen('sobrepeso', 'Imagenes/imagen_sobrepeso.jpg');
+    cargarImagen('pesosaludable', 'Imagenes/imagen_pesosaludable.jpg');
+    cargarImagen('bajopeso', 'Imagenes/imagen_bajopeso.jpg');
+}
+
+// Función para dibujar imagen en el lienzo
+function dibujarImagen(canvas, ctx, imagenes, nombreImagen) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(imagenes[nombreImagen], 0, 0, canvas.width, canvas.height);
+}
+
+// Función para obtener el resultado y dibujar la imagen correspondiente
+function dibujarSegunResultado(resultado) {
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // Cargar las imágenes
+    cargarImagenes(function(imagenes) {
+        if (resultado === 'sobrepeso') {
+            dibujarImagen(canvas, ctx, imagenes,'sobrepeso');
+        } else if (resultado === 'pesosaludable') {
+            dibujarImagen(canvas, ctx, imagenes,'pesosaludable');
+        }else if (resultado === 'bajopeso') {
+            dibujarImagen(canvas, ctx, imagenes,'bajopeso');
+        } else {
+            // Manejar otros resultados o errores
+            console.error('Resultado no válido');
+        }
+    });
+}
+
+const calcularIMC = () => {
+    var peso = parseFloat(document.getElementById('Peso').value);
+    var altura = parseFloat(document.getElementById('Altura').value) / 100;
+
+    // Determinar la situación del IMC
+    const imc = peso / (altura * altura);
+    let situacion;
+
+    if (imc < 18.5) {
+        situacion = 'bajopeso';
+    } else if (imc >= 18.5 && imc < 24.9) {
+        situacion = 'pesosaludable';
+    } else if (imc >= 25 && imc < 29.9) {
+        situacion = 'sobrepeso';
+    } else {
+        situacion = 'obesidad';
+    }
+
+    // Actualizar la imagen en el canvas según el resultado del IMC
+    dibujarSegunResultado(situacion);
+};
+
+// Llamar a la función para calcular el IMC y actualizar la imagen en el canvas
+calcularIMC();
 /**
  * Asegura que todos los datos del formularios sean ingresados y validos
  * @method validarFormulario
@@ -177,28 +250,4 @@ const mostrarInformacion = () => {
     document.getElementById('descripcionActividad').innerText = descripcion;
     document.getElementById('horarioActividad').innerText = horario;
     document.getElementById('infoActividad').style.display = 'block';
-}
-
-let x= 0;
-const dx= 2;
-const animarCorrer = () => {
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
-    const img = new Image();
-    img.src = "Imagenes/animacionFinal.png";
-
-    img.onload = function (){
-        canvas.width = canvas.width;
-        ctx.drawImage(img, x, 10, 105, 105);
-        requestAnimationFrame(animarCorrer);
-    }
-
-    if(x>canvas.width){
-        x = 0;
-    }
-    x+=dx;
-}
-
-const correr = () => {
-    requestAnimationFrame(animarCorrer);
 }
