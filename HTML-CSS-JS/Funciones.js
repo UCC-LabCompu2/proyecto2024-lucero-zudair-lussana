@@ -1,7 +1,7 @@
 /**
- * Con los valores ingresados (peso, altura) los verifica, calcula IMC y por ultima muestra recomendacion
- * @method calcularIMC
- */
+* Con los valores ingresados (peso, altura) los verifica, calcula IMC y por ultima muestra recomendacion
+* @method calcularIMC
+*/
 const calcularIMC = () => {
     let peso = parseFloat(document.getElementById('Peso').value);
     let altura = parseFloat(document.getElementById('Altura').value) / 100;
@@ -11,7 +11,6 @@ const calcularIMC = () => {
         alert('Por favor, ingrese un peso válido.');
         return;
     }
-
     if (isNaN(altura) || altura <= 1 || altura > 2.2) {
         alert('Por favor, ingrese una altura válida.');
         return;
@@ -21,7 +20,6 @@ const calcularIMC = () => {
     const imc = peso / (altura * altura);
     let situacion;
     let recomendaciones;
-
     if (imc < 18.5) {
         situacion = 'Bajo peso';
         recomendaciones = [
@@ -29,6 +27,7 @@ const calcularIMC = () => {
             'Considera aumentar la ingesta calórica con alimentos nutritivos y equilibrados.',
             'Realiza ejercicios de resistencia para ganar masa muscular.'
         ];
+        rutaImagen = 'Imagenes/imagen_bajopeso.jpg';
     } else if (imc >= 18.5 && imc < 24.9) {
         situacion = 'Peso saludable';
         recomendaciones = [
@@ -36,18 +35,21 @@ const calcularIMC = () => {
             'Sigue una dieta balanceada y continúa haciendo ejercicio regularmente.',
             'Consulta a un profesional de la salud para chequeos periódicos.',
         ];
+        rutaImagen = 'Imagenes/imagen_pesosaludable.jpg';
     } else if (imc >= 25 && imc < 29.9) {
         situacion = 'Sobrepeso';
         recomendaciones = [
             'Considera adoptar una dieta más equilibrada y aumentar tu actividad física.',
             'Consulta a un profesional de la salud para un plan personalizado que te ayude a perder peso de manera segura y efectiva.'
         ];
+        rutaImagen = 'Imagenes/imagen_sobrepeso.jpg';
     } else {
         situacion = 'Obesidad';
         recomendaciones = [
             'Es importante que consultes a un profesional de la salud para un plan integral que incluya dieta, ejercicio y posiblemente otros tratamientos.',
             'Reducir tu peso puede mejorar significativamente tu salud.'
         ];
+        rutaImagen = 'Imagenes/imagen_sobrepeso.jpg';
     }
     document.getElementById('resultadoIMC').innerText = imc.toFixed(2);
     document.getElementById('situacion').innerText = situacion;
@@ -55,14 +57,12 @@ const calcularIMC = () => {
 
     // Limpiar lista existente
     listaRecomendaciones.innerHTML = '';
-
-    // Añadir nuevas recomendaciones
+// Añadir nuevas recomendaciones
     recomendaciones.forEach(recomendacion => {
         const li = document.createElement('li');
         li.innerText = recomendacion;
         listaRecomendaciones.appendChild(li);//Agrega la recomendación dentro del elemento de lista HTML
     });
-<<<<<<< HEAD
     cargarImagen(rutaImagen, 'canvas');
 };
 
@@ -77,21 +77,13 @@ function cargarImagen(rutaImagen, canvasId) {
     let ctx = canvas.getContext('2d');
     let imagen = new Image();
     imagen.onload = function() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); //limpia el lienzo
+        ctx.clearRect(0, 0, canvas.width, canvas.height0); //limpia el lienzo
         ctx.drawImage(imagen, 0, 0, canvas.width, canvas.height);
     };
     imagen.src = rutaImagen;
 }
-=======
 
-    // Actualizar la imagen en el canvas según el resultado del IMC
-    dibujarSegunResultado(situacion);
-};
-
-
->>>>>>> eb7533d231b69614be7cba7350018069fe361b3f
-
-/**
+    /**
  * Asegura que todos los datos del formularios sean ingresados y validos
  * @method validarFormulario
  */
@@ -206,8 +198,8 @@ const mostrarInformacion = () => {
             return;
     }
 
-document.getElementById('tituloActividad').innerText = titulo;
-document.getElementById('descripcionActividad').innerText = descripcion;
-document.getElementById('horarioActividad').innerText = horario;
-document.getElementById('infoActividad').style.display = 'block';
+    document.getElementById('tituloActividad').innerText = titulo;
+    document.getElementById('descripcionActividad').innerText = descripcion;
+    document.getElementById('horarioActividad').innerText = horario;
+    document.getElementById('infoActividad').style.display = 'block';
 }
