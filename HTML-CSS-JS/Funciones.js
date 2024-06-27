@@ -3,15 +3,30 @@
  * @method calcularIMC
  */
 const calcularIMC = () => {
-    let peso = parseFloat(document.getElementById('Peso').value);
-    let altura = parseFloat(document.getElementById('Altura').value) / 100;
+    const peso = parseFloat(document.getElementById('Peso').value);
+    const altura = parseFloat(document.getElementById('Altura').value) / 100;
+
+    let pesoValido =true;
+    let alturaValida = true;
 
     // errores a datos invalidos
     if (isNaN(peso) || peso <= 0 || peso > 500) {
         alert('Por favor, ingrese un peso válido.');
-        return;
+        document.getElementById('Peso').value = '';
+        pesoValido = false;
     }
     if (isNaN(altura) || altura <= 1 || altura > 2.2) {
+        alert('Por favor, ingrese una altura válida.');
+        document.getElementById('Altura').value = '';
+        alturaValida = false;
+    }
+    if (!pesoValido || !alturaValida){
+        alert('Por favor, ingrese un peso y una altura válidos.');
+        return;
+    }else if (!pesoValido){
+        alert('Por favor, ingrese un peso válido.');
+        return;
+    }else if (!alturaValida){
         alert('Por favor, ingrese una altura válida.');
         return;
     }
@@ -42,8 +57,15 @@ const calcularIMC = () => {
             'Consulta a un profesional de la salud para un plan personalizado que te ayude a perder peso de manera segura y efectiva.'
         ];
 
-    } else {
+    } else if (imc >= 30 && imc < 34.9){
         situacion = 'Obesidad';
+        recomendaciones = [
+            'Es importante que consultes a un profesional de la salud para un plan integral que incluya dieta, ejercicio y posiblemente otros tratamientos.',
+            'Reducir tu peso puede mejorar significativamente tu salud.'
+        ];
+
+    } else if (imc >= 35){
+        situacion = 'Obesidad Mordida';
         recomendaciones = [
             'Es importante que consultes a un profesional de la salud para un plan integral que incluya dieta, ejercicio y posiblemente otros tratamientos.',
             'Reducir tu peso puede mejorar significativamente tu salud.'
@@ -182,6 +204,7 @@ const mostrarInformacion = () => {
             break;
         default:
             document.getElementById('infoActividad').style.display = 'none';
+            limpiarCanvas('canvasact'); // Limpiar el canvas cuando no se selecciona ninguna actividad
             return;
     }
 
@@ -191,6 +214,7 @@ const mostrarInformacion = () => {
     document.getElementById('infoActividad').style.display = 'block';
     cargarIm(rutaIm,'canvasact');
 }
+
 /**
  * Carga una imagen en un canvas
  * @method cargarIm
@@ -200,11 +224,43 @@ const mostrarInformacion = () => {
 const cargarIm = (src, canvasId) => {
     const canvas = document.getElementById(canvasId);
     const ctx = canvas.getContext('2d');
+
+    if (!src){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+    }
+
     const img = new Image();
+    let x = 0;//posicion inicial
 
     img.onload = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpia el canvas antes de dibujar
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        const animacion = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpia el canvas antes de dibujar
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+            x+=2;//incrementa la posicion x
+            if (x>canvas.width){
+                x = 0;// Reinicia la posición cuando la imagen sale del canvas
+            }
+            requestAnimationFrame(animacion);
+        }
+        animacion();
     };
     img.src = src;
 }
+
+/**
+ * Limpia el contenido del canvas
+ * @method limpiarCanvas
+ * @param {string} canvasId - El ID del canvas que se limpiará
+ */
+const limpiarCanvas = (canvasId) => {
+    const canvas = document.getElementById(canvasId);
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// Limpiar el canvas al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    limpiarCanvas('canvasact');
+});
