@@ -11,16 +11,14 @@ const calcularIMC = () => {
 
     // errores a datos invalidos
     if (isNaN(peso) || peso <= 0 || peso > 500) {
-        alert('Por favor, ingrese un peso válido.');
         document.getElementById('Peso').value = '';
         pesoValido = false;
     }
     if (isNaN(altura) || altura <= 1 || altura > 2.2) {
-        alert('Por favor, ingrese una altura válida.');
         document.getElementById('Altura').value = '';
         alturaValida = false;
     }
-    if (!pesoValido || !alturaValida){
+    if (!pesoValido && !alturaValida){
         alert('Por favor, ingrese un peso y una altura válidos.');
         return;
     }else if (!pesoValido){
@@ -42,7 +40,7 @@ const calcularIMC = () => {
             'Considera aumentar la ingesta calórica con alimentos nutritivos y equilibrados.',
             'Realiza ejercicios de resistencia para ganar masa muscular.'
         ];
-    } else if (imc >= 18.5 && imc < 24.9) {
+    } else if (imc < 25) {
         situacion = 'Peso saludable';
         recomendaciones = [
             '¡Mantén tu buen trabajo!',
@@ -50,21 +48,21 @@ const calcularIMC = () => {
             'Consulta a un profesional de la salud para chequeos periódicos.',
         ];
 
-    } else if (imc >= 25 && imc < 29.9) {
+    } else if (imc < 30) {
         situacion = 'Sobrepeso';
         recomendaciones = [
             'Considera adoptar una dieta más equilibrada y aumentar tu actividad física.',
             'Consulta a un profesional de la salud para un plan personalizado que te ayude a perder peso de manera segura y efectiva.'
         ];
 
-    } else if (imc >= 30 && imc < 34.9){
+    } else if (imc < 35){
         situacion = 'Obesidad';
         recomendaciones = [
             'Es importante que consultes a un profesional de la salud para un plan integral que incluya dieta, ejercicio y posiblemente otros tratamientos.',
             'Reducir tu peso puede mejorar significativamente tu salud.'
         ];
 
-    } else if (imc >= 35){
+    } else{
         situacion = 'Obesidad Mordida';
         recomendaciones = [
             'Es importante que consultes a un profesional de la salud para un plan integral que incluya dieta, ejercicio y posiblemente otros tratamientos.',
