@@ -223,28 +223,27 @@ const cargarIm = (src, canvasId) => {
     const canvas = document.getElementById(canvasId);
     const ctx = canvas.getContext('2d');
 
-    if (!src){
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        return;
-    }
-
     const img = new Image();
-    let x = 0;//posicion inicial
+    img.src = src;
+
+    let opacity = 0; // Opacidad inicial
 
     img.onload = () => {
         const animacion = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpia el canvas antes de dibujar
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.globalAlpha = opacity; // Establece la opacidad
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-            x+=2;//incrementa la posicion x
-            if (x>canvas.width){
-                x = 0;// Reinicia la posición cuando la imagen sale del canvas
+            if (opacity < 1) {
+                opacity += 0.01; // Incrementa la opacidad gradualmente
+                animationId = requestAnimationFrame(animacion);
+            } else {
+                cancelAnimationFrame(animationId); // Detiene la animación cuando la opacidad es 1
             }
-            requestAnimationFrame(animacion);
         }
         animacion();
     };
-    img.src = src;
 }
 
 /**
