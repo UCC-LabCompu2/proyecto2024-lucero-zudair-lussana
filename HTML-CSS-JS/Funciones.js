@@ -225,7 +225,6 @@ const cargarIm = (src, canvasId) => {
 
     const img = new Image();
     img.src = src;
-
     let opacity = 0; // Opacidad inicial
 
     img.onload = () => {
@@ -245,19 +244,3 @@ const cargarIm = (src, canvasId) => {
         animacion();
     };
 }
-
-/**
- * Limpia el contenido del canvas
- * @method limpiarCanvas
- * @param {string} canvasId - El ID del canvas que se limpiará
- */
-const limpiarCanvas = (canvasId) => {
-    const canvas = document.getElementById(canvasId);
-    const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
-
-// Limpiar el canvas al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    limpiarCanvas('canvasact');
-});
