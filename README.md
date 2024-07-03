@@ -26,6 +26,6 @@ Repositorio para el proyecto para laboratorio de computación 2, vamos a realiza
 * Google fonts
 * Figma
 
-Link del proyecto: [Aula virtual del proyecto(https://github.com/UCC-LabCompu2/proyecto2024-lucero-zudair-lussana/tree/master)]
+Link del proyecto: [Aula virtual del proyecto](https://github.com/UCC-LabCompu2/proyecto2024-lucero-zudair-lussana/tree/master)
 
-Link de pages de Git: [Proyecto gimnasio MOVE(https://ucc-labcompu2.github.io/proyecto2024-lucero-zudair-lussana/HTML-CSS/Index.html)]
+Link de pages de Git: [Proyecto gimnasio MOVE](https://ucc-labcompu2.github.io/proyecto2024-lucero-zudair-lussana/HTML-CSS/Index.html)
